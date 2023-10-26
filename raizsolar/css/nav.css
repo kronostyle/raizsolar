@@ -21,9 +21,144 @@
 
 .container__nav {
     margin: 0 auto;
-    width: 90%;
+    width: 100%;
     max-width: 1200px;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
-/* https://www.youtube.com/watch?v=eWZHcb5sk0s */
+
+.nav {
+    --state-close: scale(0);
+    --state-hamburguer: scale(1);
+    --state-menu: translateY(-100%);
+
+ /*    padding: 40px 0; */
+    display: grid;
+    justify-content: space-between;
+    align-items: center;
+    grid-template-columns: repeat(2, max-content);
+    position: fixed;
+}
+
+.nav:target {
+    --state-menu: translate(0);
+    --state-close: scale(1);
+    --state-hamburguer: scale(0);
+}
+
+.nav__logo {
+    font-size: 2.5rem;
+    z-index: 2;
+}
+
+.nav__logo img {
+width: 7rem;
+}
+
+.nav__hamburguer, .nav__close {
+    cursor: pointer;
+    grid-column: -2/-1;
+    grid-row: 1/2;
+    font-size: 40px;
+    transition: .4s transform;
+    text-decoration: none;
+    color: black;
+    z-index: 3;
+    
+} 
+
+
+
+.nav__hamburguer {
+    transform: var(--state-hamburguer);
+}
+
+.nav__close {
+    transform: var(--state-close);
+}
+
+
+
+
+.nav__links {
+    background: linear-gradient( rgb(20, 143, 118)50%,rgb(163, 228, 215));
+    position: absolute;
+    /* en esta parte puedo darle posicion al nav responsive */
+    top: 0;
+    bottom: 44%;
+    left: 40%;
+    right: 0;
+    padding: 0;
+    display: grid;
+    align-content: center;
+    gap: 2em;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    text-align: center;
+    transform: var(--state-menu);
+    transition: .3s transform;
+    z-index: 1;
+}
+
+.nav__item {
+    list-style: none;
+}
+
+
+
+.nav__links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    text-shadow: 1px 1px 1px black;
+}
+
+@media (min-width:768px) {
+    .nav {
+        --state-hamburguer: scale(0);
+        --state-menu: translateY(0);
+    }
+    
+    .nav:target {
+        --state-close: scale(0);
+    }
+
+    .nav__links {
+        padding: 0;
+        background-color: white;
+        position: unset;
+        gap: 1.5em;
+        grid-auto-flow: column;
+        transform: unset;
+        grid-column: -2/-1;
+        grid-row: 1/2;
+        background: none;
+
+    }
+
+    .nav__links a {
+        color: black;
+        text-shadow: none;
+    }
+
+    .nav__links a::after {
+        content: "";
+        height: 4px;
+        width: 0;
+        background-color: var(--color_1);
+        display: block;
+        transition: all .3s;
+    }
+
+    .nav__links a:hover:after {
+        width: 100%;
+    }
+
+    .nav__item {
+        font-size: 1.2rem;
+        letter-spacing: none;
+    }
+}
