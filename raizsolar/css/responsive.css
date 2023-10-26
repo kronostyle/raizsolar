@@ -1,0 +1,31 @@
+@media (max-width: 995px) {
+    .box_contact {
+        grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "form"
+    "info"
+    "map";
+    }
+
+    
+
+    .formBox .row50 {
+        display: flex;
+        gap: 0;
+        flex-direction: column;
+    }
+
+    .inputBox {
+        width: 100%;
+    }
+
+    .contactUs {
+        padding: 1.9rem;  
+    }
+
+    .map_contact {
+        min-height: 18.75rem;
+        padding: 0;
+     }
+}
