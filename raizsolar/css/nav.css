@@ -22,7 +22,7 @@
 .container__nav {
     margin: 0 auto;
     width: 100%;
-    max-width: 1200px;
+    /* max-width: 1200px; */
     /* overflow: hidden; */
 }
 
@@ -38,6 +38,9 @@
     align-items: center;
     grid-template-columns: repeat(2, max-content);
     position: fixed;
+    padding: 2% 5% 0% 5%;
+    z-index: 10;
+
 }
 
 .nav:target {
@@ -85,8 +88,8 @@ width: 7rem;
     position: absolute;
     /* en esta parte puedo darle posicion al nav responsive */
     top: 0;
-    bottom: 44%;
-    left: 40%;
+    bottom: -673%;
+    left: 0;
     right: 0;
     padding: 0;
     display: grid;

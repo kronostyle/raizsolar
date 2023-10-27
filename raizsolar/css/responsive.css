@@ -1,11 +1,23 @@
+@media (max-width: 1000px) {
+    .servicios {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .grid_zone {
+        
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: repeat(3,1fr);
+
+    }
+}
 @media (max-width: 995px) {
     .box_contact {
         grid-template-columns: 1fr;
     grid-template-rows: auto;
     grid-template-areas: 
     "form"
-    "info"
-    "map";
+    "map"
+    "info";
     }
 
     
@@ -28,4 +40,34 @@
         min-height: 18.75rem;
         padding: 0;
      }
+}
+
+@media (max-width: 664px) {
+    .logo_banner h1 {
+        color: white;
+        text-shadow: 1px 1px 1px black;
+        font-size: 1.5rem;
+        text-align: center;
+        font-weight: 600;
+    }
+}
+
+@media (max-width: 650px) {
+    .servicios {
+        grid-template-columns: repeat(1,1fr);
+    }
+    .grid_zone {
+        grid-template-columns: repeat(1,1fr);
+        
+    }
+
+    .mision_vision_section {
+
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .mision_vision_section .mision_vision {
+        width: 100%;
+    }
 }
